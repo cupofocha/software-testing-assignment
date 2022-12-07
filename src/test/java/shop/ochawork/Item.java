@@ -9,6 +9,16 @@ public class Item {
 
     private WebElement addToCart;
 
+    private WebElement removeItem;
+
+    public WebElement getRemoveItem() {
+        return removeItem;
+    }
+
+    public void setRemoveItem(WebElement removeItem) {
+        this.removeItem = removeItem;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -31,12 +41,6 @@ public class Item {
 
     public WebElement getAddToCart() {
         return addToCart;
-    }
-
-    public Item(String name, String price, WebElement addToCart) {
-        this.name = name;
-        Price = price;
-        this.addToCart = addToCart;
     }
 
     public Item(){}

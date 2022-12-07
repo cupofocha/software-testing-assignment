@@ -69,6 +69,9 @@ public class HomePage {
     @FindBy(className = "inventory_list")
     private WebElement inventoryList;
 
+    @FindBy(xpath = "//*[@id=\"checkout_info_container\"]/div/form/div[1]/div[4]/h3")
+    private WebElement checkoutError;
+
     List<WebElement> inventories = new ArrayList<>();
 
     List<Item> itemList = new ArrayList<>();
@@ -88,6 +91,15 @@ public class HomePage {
     }
 
     public void addItemToCart(String itemName){
+        getInventories();
+        for(Item item : itemList){
+            if(itemName.equals(item.getName())){
+                item.getAddToCart().click();
+            }
+        }
+    }
+
+    public void removeItem(String itemName){
         getInventories();
         for(Item item : itemList){
             if(itemName.equals(item.getName())){
@@ -157,5 +169,9 @@ public class HomePage {
 
     public void refreshPage(){
         driver.navigate().refresh();
+    }
+
+    public String getCheckoutError(){
+        return checkoutError.getText();
     }
 }

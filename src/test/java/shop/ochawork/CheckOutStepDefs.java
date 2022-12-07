@@ -30,4 +30,9 @@ public class CheckOutStepDefs extends AbstractStepDefs{
     public void total$ShouldBeShown(String total) {
         Assert.assertEquals(total, homePage.getTotal());
     }
+
+    @Then("check out error {string} should be shown")
+    public void checkoutErrorShouldBeShown(String error){
+        Assert.assertEquals(error, homePage.getCheckoutError());
+    }
 }

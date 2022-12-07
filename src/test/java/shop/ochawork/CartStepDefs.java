@@ -10,6 +10,9 @@ public class CartStepDefs extends AbstractStepDefs{
     @Given("the {string} is added to the cart")
     public void theItemIsAddedToTheCart(String item){ homePage.addItemToCart(item);}
 
+    @Given("the {string} is removed")
+    public void theItemIsRemoved(String item){ homePage.removeItem(item);}
+
     @And("the cart icon is clicked")
     public void theCartIconIsClicked() {
         homePage.clickOnCart();
@@ -19,4 +22,6 @@ public class CartStepDefs extends AbstractStepDefs{
     public void theCheckoutButtonIsClicked() {
         homePage.clickCheckoutButton();
     }
+
+
 }
